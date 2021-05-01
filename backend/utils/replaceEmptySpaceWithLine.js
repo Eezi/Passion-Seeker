@@ -1,0 +1,1 @@
+export const replaceEmptySpaceWithLine = (string) => string.split('').map((n) => n.replace(' ', '-')).join('')

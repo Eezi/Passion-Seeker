@@ -1,0 +1,1 @@
+export const removesScandinavianLetters = (string) => string.split('').map((n) => n.replace('ä', 'a').replace('ö', 'o')).join('');
