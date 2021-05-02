@@ -1,7 +1,8 @@
 import fs from 'fs'
 import { normalizeFileData } from './normalizeFileData.js'
 
-try {
+export const getFileData = async () => {
+    try {
   const textFileData = fs.readFileSync('/Users/tomias/Documents/games.txt', 'utf8')
   const filteredData = textFileData.split('\n').map(line => {
       const normalizedKeyValue = normalizeFileData(line)
@@ -13,8 +14,9 @@ try {
         } 
       }
    })
-    console.log('data', filteredData)
+    //console.log('data', filteredData)
    return filteredData
-} catch (err) {
-  console.error(err)
+    } catch(error) {
+        console.log('readFile error', error)
+    } 
 }
