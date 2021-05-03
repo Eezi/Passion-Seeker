@@ -1,28 +1,31 @@
 <template>
-<div>
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+<div class="container mx-auto"> 
+  <p>dfsfsalkdfjglsdfgjsldjgskdjflöfjdsklf</p>
+  <ul>
+    <li v-for="hobbie in hobbies" :key="hobbie.label">
+      {{ hobbie.label }}
+    </li>
+  </ul>
 </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
 
 export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
+  components: {},
+  data() {
+    return {
+      hobbies: [
+        { label: 'Shakki' },
+        { label: 'Biljardi' },
+        { label: 'Pingis' }
+        ]
+    }
   }
 });
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

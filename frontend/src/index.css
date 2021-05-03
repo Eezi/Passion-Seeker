@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body {
+    font-family: 'Open Sans';
+    background: #fffdf9;
+    color: #292929;
+    box-sizing: border-box;
+    padding: 0;
+	margin: 0;
+}
