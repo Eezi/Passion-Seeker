@@ -6,7 +6,7 @@ export const getFileData = async () => {
   const textFileData = fs.readFileSync('/Users/tomias/Documents/games.txt', 'utf8')
   const filteredData = textFileData.split('\n').map(line => {
       const normalizedKeyValue = normalizeFileData(line)
-      if(normalizedKeyValue.length > 0) {
+      if(normalizedKeyValue) {
         return {
             label: line.trim(),
             key: normalizedKeyValue,
@@ -14,8 +14,12 @@ export const getFileData = async () => {
         } 
       }
    })
-    //console.log('data', filteredData)
-   return filteredData
+
+    const finalData = filteredData.filter((el) => {
+        return el != null || undefined;
+    });
+
+   return finalData
     } catch(error) {
         console.log('readFile error', error)
     } 

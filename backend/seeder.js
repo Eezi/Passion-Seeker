@@ -11,9 +11,8 @@ connectDB()
 const importData = async () => {
     try {
         const fileData = await getFileData()
-        console.log('filedata', fileData)
 
-      await Passion.insertMany({passions: fileData});
+       // await Passion.insertMany(fileData)
 
        console.log('Data imported!')
        process.exit()
