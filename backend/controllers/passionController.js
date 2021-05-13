@@ -1,9 +1,9 @@
 import Passion from "../models/passionModel.js";
 
 export default {
- getAllPassions: async (parent, args, context) => {
-  const passions = await Passion.find({});
-  console.log('passions', passions)
-  return passions
-}
+    getAllGamePassions: async (parent, args, context) => {
+        const passions = await Passion.find({category: 'games'});
+        console.log('passions', passions)
+        return passions
+    }
 }

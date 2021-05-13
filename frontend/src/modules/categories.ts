@@ -26,5 +26,21 @@ export const categories: { key: string, label: string } [] = [
    }, {
        key: "extreme-hobbies",
        label: "Extreme-lajit"
+   }, {
+       key: "motorsports",
+       label: "Moottoriurheilu"
+   }, {
+       key: "creative",
+       label: "Luova tekeminen"
+   }, {
+       key: "food-and-drinks",
+       label: "Ruoka ja juomat"
+   }, {
+       key: "entertainment",
+       label: "Viihde"
    },
+
+
+
+
 ];

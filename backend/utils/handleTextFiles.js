@@ -1,5 +1,6 @@
 import fs from 'fs'
 import { normalizeFileData } from './normalizeFileData.js'
+import { capitalizeFirstLetter } from './capitalizeFirstLetter.js'
 
 export const getFileData = async () => {
     try {
@@ -7,10 +8,11 @@ export const getFileData = async () => {
   const filteredData = textFileData.split('\n').map(line => {
       const normalizedKeyValue = normalizeFileData(line)
       if(normalizedKeyValue) {
+        const label = capitalizeFirstLetter(line.trim())
         return {
-            label: line.trim(),
+            label,
             key: normalizedKeyValue,
-            category: 'games'
+            category: 'entertainment'
         } 
       }
    })

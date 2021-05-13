@@ -12,9 +12,9 @@ const importData = async () => {
     try {
         const fileData = await getFileData()
 
-       // await Passion.insertMany(fileData)
+      await Passion.insertMany(fileData)
 
-       console.log('Data imported!')
+       console.log('Data imported!', fileData)
        process.exit()
 
     } catch (error) {
