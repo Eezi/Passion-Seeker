@@ -1,0 +1,13 @@
+#import '../fragments/Passions.gql'
+
+query gamePassions {
+    gamePassions {
+        ...Passions
+    }
+}
+
+query sportAndOutdoorPassions {
+    sportAndOutdoorPassions {
+        ...Passions
+    }
+}

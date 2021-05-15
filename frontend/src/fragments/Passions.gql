@@ -1,0 +1,5 @@
+fragment Passions on Passions {
+    key
+    label
+    category
+}

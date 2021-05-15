@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-3 gap-4">
   <div 
-  class="p-12 bg-green-300 text-center bg-opacity-80 shadow-md rounded-md transform motion-safe:hover:scale-110" 
+  class="p-10 bg-green-300 text-center bg-opacity-80 shadow-md rounded-md transform motion-safe:hover:scale-110" 
   v-for="cate in categories"
   :key="cate.key">
     <h5 class="text-2xl">{{ cate.label }}</h5>
