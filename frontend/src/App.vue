@@ -10,43 +10,19 @@ import { defineComponent, ref } from 'vue';
 import { categories } from './modules/categories';
 import Category from './types/category';
 import CategoryList from './components/CategoryList.vue';
-import gql from 'graphql-tag';
-import { watch } from '@vue/composition-api'
-import { useQuery } from '@vue/apollo-composable'
-//import { gamePassions } from './queries/Passions.gql';
+import { useQuery, useResult } from '@vue/apollo-composable'
+import { QUERY_GAME_PASSIONS } from './graphql/queries';
 
  export default defineComponent({
   name: 'App',
   components: { CategoryList },
-  pollo: {
-    // Simple query that will update the 'hello' vue property
-    gamePassions: gql`query {
-      category
-      key
-      label
-    }`,
-  },
   setup() {
-   const { result, loading, error } = useQuery(gql`
-     query getUsers {
-        passions {
-          key
-          label
-          category
-        }
-      }
-    `)
-
-    watch(result, value => {
-      console.log('result', result)
-      console.log('value', value)
-    })
+  const { result } = useQuery(QUERY_GAME_PASSIONS)
+    const gameHobbies = useResult(result, null, data => data.gamePassions)
     const stateCategories = ref<Category[]>([])
     return {
       stateCategories,
-      result,
-      loading, 
-      error,
+      gameHobbies
     }
   },
   
