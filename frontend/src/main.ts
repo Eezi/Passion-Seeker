@@ -1,7 +1,9 @@
 import { createApp, provide, h } from 'vue'
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, InMemoryCache } from '@apollo/client'
 import { DefaultApolloClient } from '@vue/apollo-composable'
 import App from './App.vue'
+import '../src/index.css'
+import router from './router'
 
 const defaultClient = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
@@ -17,4 +19,4 @@ createApp(
       return h(App)
     }
   }
-).mount('#app')
+).use(router).mount('#app')

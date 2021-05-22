@@ -1,39 +1,32 @@
 <template>
-<div class="container mx-auto"> 
-  <h1 class="text-center m-6 text-4xl">Etsi harrastuksesi helposti ja vaivattomasti</h1>
-  <CategoryList :categories="stateCategories" />
-</div>
+  <div>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </div>
+  <router-view/>
+  </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { categories } from './modules/categories';
-import Category from './types/category';
-import CategoryList from './components/CategoryList.vue';
-import { useQuery, useResult } from '@vue/apollo-composable'
-import { QUERY_GAME_PASSIONS } from './graphql/queries';
-
- export default defineComponent({
-  name: 'App',
-  components: { CategoryList },
-  setup() {
-  const { result } = useQuery(QUERY_GAME_PASSIONS)
-    const gameHobbies = useResult(result, null, data => data.gamePassions)
-    const stateCategories = ref<Category[]>([])
-    return {
-      stateCategories,
-      gameHobbies
-    }
-  },
-  
-  methods: {
-  },
-
-  created() {
-    this.stateCategories = categories;
-    },
-});
-</script>
-
 <style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>

@@ -10,6 +10,9 @@ module.exports = {
     pluginOptions: {
       apollo: {
           lintGQL: true
-      }
+    },
   },
+  devServer: {
+    proxy: 'http://localhost:4000'
+  }
 }
