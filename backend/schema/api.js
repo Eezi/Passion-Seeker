@@ -9,14 +9,14 @@ const typeDefs = gql`
   }
 
   type Query {
-    gamePassions: [Passion]
+    passions(category: String): [Passion]
   }
 
 `;
 
 const resolvers = {
   Query: {
-    gamePassions: PassionQueries.getAllGamePassions,
+    passions: PassionQueries.getAllGamePassions,
   },
 };
 

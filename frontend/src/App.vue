@@ -1,8 +1,8 @@
 <template>
   <div>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link class="text-lg" to="/">Katergoriat</router-link> |
+    <router-link class="text-lg" to="/about">Ammatit</router-link>
   </div>
   <router-view/>
   </div>
@@ -18,7 +18,8 @@
 }
 
 #nav {
-  padding: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #nav a {
