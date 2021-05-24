@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-3 gap-4">
   <div 
-  class="motion-safe:hover:scale-110 p-10 bg-green-300 text-center bg-opacity-80 shadow-md rounded-md" 
+  class="motion-safe:hover:scale-110 p-8 bg-green-300 text-center bg-opacity-80 shadow-md rounded-md" 
   v-for="cate in categories"
   :key="cate.key">
     <router-link 

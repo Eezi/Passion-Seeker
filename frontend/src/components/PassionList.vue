@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-3 gap-4">
   <div 
-  class="p-10 bg-blue-300 text-center bg-opacity-80 shadow-md rounded-md" 
+  class="p-8 bg-blue-300 text-center bg-opacity-80 shadow-md rounded-md" 
   v-for="passion in passions"
   :key="passion.key">
     <p class="font-medium text-2xl">{{ passion.label }}</p>

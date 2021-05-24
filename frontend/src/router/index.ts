@@ -23,6 +23,13 @@ const routes: Array<RouteRecordRaw> = [
     props: true,
     component: () => import('../views/PassionCategory.vue')
     
+  },
+  {
+    path: '/passion-test',
+    name: 'PassionTest',
+    props: true,
+    component: () => import('../views/PassionTest.vue')
+    
   }
 ]
 
