@@ -1,7 +1,7 @@
-interface Passion {
+interface Question {
   key: string;
   label: string;
-  category: string;
+  answers: object;
 }
 
 export default Passion;

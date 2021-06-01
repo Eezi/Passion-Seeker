@@ -1,6 +1,6 @@
 <template>
 <div class="container mx-auto"> 
-  <router-link to="/passion-test" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Tee testi</router-link>
+  <router-link to="/passion-test/question1" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Tee testi</router-link>
   <h1 class="font-bold text-center m-5 text-4xl">Etsi harrastuksesi helposti ja vaivattomasti</h1>
   <CategoryList :categories="stateCategories" />
 </div>

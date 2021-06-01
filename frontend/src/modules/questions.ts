@@ -1,68 +1,68 @@
-export const questions: { key: string, label: string, answers: object } [] = [
+export const questions: { key: string, label: string, answers: Array<object> } [] = [
     {
         label: 'Onko sinulle tärkeää, että pystyt huomaamaan kehittymisen siinä mitä teet?',
         key: 'question1',
-        answers: {
-            a: 'Haluan huomata kehitykseni',
-            b: 'Minulle kehittyminen harrastuksessa ei ole niin väliä',
-            c: 'En osaa sanoa'
-        }
+        answers: [ 
+            { label: 'Haluan huomata kehitykseni', option: 'a' },
+            { label: 'Minulle kehittyminen harrastuksessa ei ole niin väliä', option: 'b' },
+            { label: 'En osaa sanoa', option: 'c' }
+        ]   
     },
     {
         label: 'Kaipaatko monipuolista intensiivistä tekemistä vai yksinkertaista vaivatonta tekemistä?',
         key: 'question2',
-        answers: {
-            a: 'Monipuolinen',
-            b: 'Yksinkertainen',
-            c: 'Molemmat kuulostaa hyvältä'
-        }
+        answers: [
+           { label: 'Monipuolinen', option: 'a' },
+           { label: 'Yksinkertainen', option: 'b' },
+           { label: 'Molemmat kuulostaa hyvältä', option: 'c' }
+        ]
     },
     {
         label: 'Mikä näistä kuvastaa luonnettasi parhaiten?',
         key: 'question3',
-        answers: {
-            a: 'Luova älykkö, joka nauttii yksityiskohtien suunnittelusta ja havainnoimisesta',
-            b: 'Suorittamishenkinen intoilija, joka harjoittelee mielellään lajinsa parissa jatkuvalla syötöllä',
-            c: 'Pohdiskeleva nautiskelija, joka iloitsee elämän pienistäkin asioista'
-        }
+        answers: [
+           { label: 'Luova älykkö, joka nauttii yksityiskohtien suunnittelusta ja havainnoimisesta', option: 'a' },
+           { label: 'Suorittamishenkinen intoilija, joka harjoittelee mielellään lajinsa parissa jatkuvalla syötöllä', option: 'b' },
+           { label: 'Pohdiskeleva nautiskelija, joka iloitsee elämän pienistäkin asioista', option: 'c' },
+        ]
     },
     {
         label: 'Missä näistä tunnet olosi mukavimmaksi?',
         key: 'question4',
-        answers: {
-            a: 'Kotona',
-            b: 'Luonnossa',
-            c: 'Urheiluhallilla',
-            d: 'Lavalla'
-        }
+        answers: [
+           { label: 'Kotona', option: 'a' },
+           { label: 'Luonnossa', option: 'b' },
+           { label: 'Urheiluhallilla', option: 'c' },
+           { label: 'Lavalla', option: 'd' }
+        ]
     },
     {
         label: 'Mitä kaipaat harrastukselta?',
         key: 'question5',
-        answers: {
-            a: 'Vauhtia',
-            b: 'Uuden oppimista ja keskittymistä',
-            c: 'Rentoutumista tai hyvinvointia',
-        }
+        answers: [
+           { label: 'Vauhtia', option: 'a' },
+           { label: 'Uuden oppimista ja keskittymistä', option: 'b' },
+           { label: 'Rentoutumista tai hyvinvointia', option: 'c' },
+        ]
     },
     {
         label: 'Tykkäätkö tehdä asioita muiden kanssa?',
         key: 'question6',
-        answers: {
-            a: 'Kyllä',
-            b: 'Ei (Teen mielummin itenäisesti)',
-            c: 'Tykkään, jos ne muut ovat eläimiä',
-        }
+        answers: [
+           { label: 'Kyllä', option: 'a' },
+           { label: 'Ei (Teen mielummin itenäisesti)', option: 'b' },
+           { label: 'Tykkään, jos ne muut ovat eläimiä', option: 'c' },
+        ]
     },
     {
         label: 'Miten usein tykkäisit harrastaa harrastusta?',
         key: 'question7',
-        answers: {
-            a: 'Satunnaisesti',
-            b: '1-2 kertaa viikossa',
-            c: 'Oman aikataulun mukaan mutta paljon kerralla',
-            d: 'Useita kertoja viikossa'
-        }
+        answers: [
+           { label: 'Satunnaisesti', option: 'a' },
+           { label: '1-2 kertaa viikossa', option: 'b' },
+           { label: 'Oman aikataulun mukaan mutta paljon kerralla', option: 'c' },
+           { label: 'Useita kertoja viikossa', option: 'd' }
+        ]
     },
 ];
 
