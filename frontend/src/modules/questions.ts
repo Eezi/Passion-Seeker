@@ -24,6 +24,7 @@ export const questions: { key: string, label: string, answers: Array<object> } [
            { label: 'Luova älykkö, joka nauttii yksityiskohtien suunnittelusta ja havainnoimisesta', option: 'a' },
            { label: 'Suorittamishenkinen intoilija, joka harjoittelee mielellään lajinsa parissa jatkuvalla syötöllä', option: 'b' },
            { label: 'Pohdiskeleva nautiskelija, joka iloitsee elämän pienistäkin asioista', option: 'c' },
+           { label: 'Kokeilunhaluinen seikkailija, joka ei ota elämää niin vakavasti', option: 'd' },
         ]
     },
     {
