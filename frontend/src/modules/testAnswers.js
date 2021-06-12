@@ -18,6 +18,12 @@ const testAnswers = [
     },
     /*
         Pallopelit, mailapelit, yksilölait, joukkuelajit
+        Kokonaan omat voisi olla tanssi ja voimistelu / voimailu
+        voimistelu
+        tanssit: {
+        salsa,
+        Breikkaus
+        }
     */
     {
      key: "lautapelit",
@@ -91,13 +97,13 @@ const testAnswers = [
      key: "mailapelit",
      label: "Mailapelit",
      category: "sports-and-outdoor",
-     question1: ['b'],
-     question2: ['a'],
-     question3: ['c'],
-     question4: ['b'],
-     question5: ['c'],
-     question6: ['a', 'b', 'c'],
-     question7: ['c'],
+     question1: ['a'],
+     question2: ['b'],
+     question3: ['b'],
+     question4: ['c'],
+     question5: ['a'],
+     question6: ['a'],
+     question7: ['b', 'd'],
      subPassions: [
          { key: 'tennis', label: 'Tennis' },
          { key: 'golf ', label: 'Golf' },
@@ -109,6 +115,72 @@ const testAnswers = [
          { key: 'jaakiekko', label: 'Jääkiekko' },
          { key: 'pesapallo', label: 'Pesäpallo' },
          { key: 'haavipallo', label: 'Haavipallo' },
+     ]
+    },
+
+    {
+     key: "vesilajit",
+     label: "Vesilajit",
+     category: "sports-and-outdoor",
+     question1: ['b', 'c'],
+     question2: ['c'],
+     question3: ['b', 'c', 'd'],
+     question4: ['b', 'c'],
+     question5: ['a', 'c'],
+     question6: ['a', 'b'],
+     question7: ['a', 'b', 'c', 'd'],
+     subPassions: [
+         { key: 'uinti', label: 'Uinti' },
+         { key: 'kuviokellunta ', label: 'Kuviokellunta' },
+         { key: 'sukeltaminen', label: 'Sukeltaminen' },
+         { key: 'vesipallo', label: 'Vesipallo' },
+         { key: 'melonta', label: 'Melonta' },
+         { key: 'vesijuoksu', label: 'Vesijuoksu' },
+         { key: 'snorklaus', label: 'Snorklaus' },
+         { key: 'vesihiihto', label: 'Vesihiihto' },
+         { key: 'soutaminen', label: 'Soutaminen' },
+         { key: 'veneily', label: 'Veneily' },
+         { key: 'koskenlasku', label: 'Koskenlasku' },
+         { key: 'vesilautailu', label: 'Vesilautailu' },
+         { key: 'purjehdus', label: 'Purjehdus' },
+         { key: 'purjelautailu', label: 'Purjelautailu' },
+         { key: 'surffaus', label: 'Surffaus' },
+         { key: 'uimahyppääminen', label: 'Uimahyppääminen' },
+         { key: 'suppailu', label: 'Suppailu' },
+     ]
+    },
+
+    {
+     key: "ulkoliikunta",
+     label: "Ulkoliikunta",
+     category: "sports-and-outdoor",
+     question1: [''],
+     question2: [''],
+     question3: [''],
+     question4: [''],
+     question5: [''],
+     question6: [''],
+     question7: ['', ''],
+     subPassions: [
+         { key: 'hiihto', label: 'Hiihto' },
+         { key: 'suunnistus ', label: 'Suunnistus' },
+         { key: 'ratsastus', label: 'Ratsastus' },
+         { key: 'laskettelu', label: 'Laskettelu' },
+         { key: 'jalkapallo', label: 'Jalkapallo' },
+         { key: 'skeittaus', label: 'Skeittaus' },
+         { key: 'skuuttaus', label: 'Skuuttaus' },
+         { key: 'rullaluistelu', label: 'Rullaluistelu' },
+         { key: 'lenkkeily', label: 'Lenkkeily' },
+         { key: 'porrasjuoksu', label: 'Porrasjuoksu' },
+         { key: 'polkujuoksu', label: 'Polkujuoksu' },
+         { key: 'pyorailu', label: 'Pyöräily' },
+         { key: 'ampumahiihto', label: 'Ampumahiihto' },
+         { key: 'parkour', label: 'Parkour' },
+         { key: 'slacklining', label: 'Slacklining' },
+         { key: 'maastopyorailu', label: 'Maastopyöräily' },
+         { key: 'street-workout', label: 'Street workout' },
+         { key: 'luistelu', label: 'Luistelu' },
+       { key: 'bumerangin-frisbeen-heittely', label: 'Bumerangin / Frisbeen heittely' },
      ]
     },
 ]
