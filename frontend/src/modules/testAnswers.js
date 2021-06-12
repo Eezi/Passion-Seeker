@@ -18,12 +18,6 @@ const testAnswers = [
     },
     /*
         Pallopelit, mailapelit, yksilölait, joukkuelajit
-        Kokonaan omat voisi olla tanssi ja voimistelu / voimailu
-        voimistelu
-        tanssit: {
-        salsa,
-        Breikkaus
-        }
     */
     {
      key: "lautapelit",
@@ -154,13 +148,13 @@ const testAnswers = [
      key: "ulkoliikunta",
      label: "Ulkoliikunta",
      category: "sports-and-outdoor",
-     question1: [''],
-     question2: [''],
-     question3: [''],
-     question4: [''],
-     question5: [''],
-     question6: [''],
-     question7: ['', ''],
+     question1: ['a', 'b', 'c'],
+     question2: ['a'],
+     question3: ['b', 'c' ,'d'],
+     question4: ['b'],
+     question5: ['a'],
+     question6: ['a', 'b'],
+     question7: ['a', 'b', 'c', 'd'],
      subPassions: [
          { key: 'hiihto', label: 'Hiihto' },
          { key: 'suunnistus ', label: 'Suunnistus' },
@@ -183,4 +177,50 @@ const testAnswers = [
        { key: 'bumerangin-frisbeen-heittely', label: 'Bumerangin / Frisbeen heittely' },
      ]
     },
+
+    {
+     key: "tanssi",
+     label: "Tanssi",
+     category: "sports-and-outdoor",
+     question1: ['a', 'b', 'c'],
+     question2: ['c'],
+     question3: ['b', 'c', 'd'],
+     question4: ['c', 'd'],
+     question5: ['a', 'b', 'c'],
+     question6: ['a', 'b'],
+     question7: ['a', 'b', 'c', 'd'],
+     subPassions: [
+         { key: 'tango', label: 'Tango' },
+         { key: 'valssi ', label: 'Valssi' },
+         { key: 'salsa', label: 'Salsa' },
+         { key: 'tankotanssi', label: 'Tankotanssi' },
+         { key: 'breikkaus', label: 'Breikkaus' },
+         { key: 'hiphop', label: 'Hiphop' },
+         { key: 'street', label: 'Street' },
+         { key: 'baletti', label: 'Baletti' },
+         { key: 'samba', label: 'Samba' },
+     ]
+    },
+    
+    {
+     key: "voimailu",
+     label: "Voimailu",
+     category: "sports-and-outdoor",
+     question1: ['a'],
+     question2: ['c'],
+     question3: ['b'],
+     question4: ['c'],
+     question5: ['a'],
+     question6: ['a', 'b'],
+     question7: ['b', 'd'],
+     subPassions: [
+         { key: 'painonnosto', label: 'Painonnosto' },
+         { key: 'telinevoimistelu ', label: 'Telinevoimistelu' },
+         { key: 'voimistelu', label: 'Voimistelu' },
+         { key: 'fitness', label: 'Fitness' },
+         { key: 'kehonrakennus', label: 'Kehonrakennus' },
+         { key: 'crossfit', label: 'Crossfit' },
+     ]
+    },
+
 ]
