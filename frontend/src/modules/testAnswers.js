@@ -158,6 +158,7 @@ const testAnswers = [
      subPassions: [
          { key: 'hiihto', label: 'Hiihto' },
          { key: 'suunnistus ', label: 'Suunnistus' },
+         { key: 'kiipeily ', label: 'Kiipeily' },
          { key: 'ratsastus', label: 'Ratsastus' },
          { key: 'laskettelu', label: 'Laskettelu' },
          { key: 'jalkapallo', label: 'Jalkapallo' },
@@ -220,6 +221,78 @@ const testAnswers = [
          { key: 'fitness', label: 'Fitness' },
          { key: 'kehonrakennus', label: 'Kehonrakennus' },
          { key: 'crossfit', label: 'Crossfit' },
+     ]
+    },
+
+    {
+     key: "korttipelit",
+     label: "Korttipelit",
+     category: "games",
+     question1: [''],
+     question2: [''],
+     question3: [''],
+     question4: [''],
+     question5: [''],
+     question6: ['', ''],
+     question7: ['', ''],
+     subPassions: [
+         { key: 'black-jack', label: 'Black-Jack' },
+         { key: 'pokeri ', label: 'Pokeri' },
+         { key: 'ristiseiska', label: 'Ristiseiska' },
+     ]
+    },
+
+    {
+     key: "lautapelit",
+     label: "Lautapelit",
+     category: "games",
+     question1: [''],
+     question2: [''],
+     question3: [''],
+     question4: [''],
+     question5: [''],
+     question6: ['', ''],
+     question7: ['', ''],
+     subPassions: [
+         { key: 'monopoli', label: 'Monopoli' },
+         { key: 'alias ', label: 'Alias' },
+         { key: 'shakki', label: 'Shakki' },
+     ]
+    },
+
+    {
+     key: "poytapelit",
+     label: "Pöytäpelit",
+     category: "games",
+     question1: [''],
+     question2: [''],
+     question3: [''],
+     question4: [''],
+     question5: [''],
+     question6: ['', ''],
+     question7: ['', ''],
+     subPassions: [
+         { key: 'biljardi', label: 'Biljardi' },
+         { key: 'poytajalkapallo ', label: 'Pöytäjalkapallo'},
+         { key: 'pingis', label: 'Pingis' },
+     ]
+    },
+
+    {
+     key: "korttipelit",
+     label: "Korttipelit",
+     category: "games",
+     question1: [''],
+     question2: [''],
+     question3: [''],
+     question4: [''],
+     question5: [''],
+     question6: ['', ''],
+     question7: ['', ''],
+     subPassions: [
+         { key: 'black-jack', label: 'Black-Jack' },
+         { key: 'pokeri ', label: 'Pokeri' },
+         { key: 'ristiseiska', label: 'Ristiseiska' },
      ]
     },
 
