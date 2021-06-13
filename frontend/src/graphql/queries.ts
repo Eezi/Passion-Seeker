@@ -9,3 +9,11 @@ export const QUERY_PASSIONS = gql`
         }
     }
 `;
+
+export const QUERY_RESULT_PASSIONS = gql`
+    query getTestResults($answers: TestAnswerInput) {
+        getTestResults(answers: $answers) {
+           key
+        }
+    }
+`;

@@ -30,6 +30,13 @@ const routes: Array<RouteRecordRaw> = [
     props: true,
     component: () => import('../views/PassionTest.vue')
     
+  },
+  {
+    path: '/passion-test/results',
+    name: 'TestResults',
+    props: true,
+    component: () => import('../views/TestResults.vue')
+    
   }
 ]
 

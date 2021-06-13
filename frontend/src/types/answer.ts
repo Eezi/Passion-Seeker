@@ -1,7 +1,6 @@
 interface Answer {
-  label: string;
-  option: string;
-  key: string;
+  question: string;
+  answer: string;
 }
 
 export default Passion;

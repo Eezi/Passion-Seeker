@@ -36,8 +36,8 @@ import { useRoute } from 'vue-router'
 
   
    created() {
-
-      console.log('categoryname')
+    const route = useRoute()
+      console.log('categoryname', route.params.categoryName )
     }  ,
   methods: {
   },

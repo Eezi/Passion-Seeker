@@ -2,7 +2,7 @@
     <div>
       <h3>{{ stateQuestions.label }}</h3>
     <ul>
-      <li @click="handleAnserClick(answer)" class="answer max-w-lg h-13 mx-auto p-3 bg-green-400 m-3 text-white rounded" v-for="(answer, key) in stateAnswers" :key="key">
+      <li @click="handleAnserClick(answer.option)" class="answer max-w-lg h-13 mx-auto p-3 bg-green-400 m-3 text-white rounded" v-for="(answer, key) in stateAnswers" :key="key">
         <strong> {{ answer.label }} </strong>
       </li>
     </ul>
@@ -31,16 +31,19 @@ import Answer from '../types/answer';
   data: function() {
     return {
       pageIndex: 0,
+      allAnswers: this.questionAnswers,
     }
   },
 
   methods: {
-    handleAnserClick: function(answer: object) {
+    handleAnserClick: function(answer: string) {
       const newAnswer = {
-       key: this.$route.params.question,
-       ...answer
+       question: this.$route.params.question,
+       answer: answer
       };
-      this.questionAnswers.push(newAnswer)
+      if (!this.questionAnswers.find(q => q.question === 'question7')) {
+        this.questionAnswers.push(newAnswer)
+      }
       this.handleNextPage();
     },
 
@@ -52,7 +55,12 @@ import Answer from '../types/answer';
       }
 
       if (this.pageIndex === questions.length) {
-        this.$router.push(`/passion-test/results`)
+        const newList = []
+        this.questionAnswers.forEach(element => {
+          newList.push(element) 
+        });
+        console.log('mikäs', newList)
+        this.$router.push({ name: 'TestResults', params: { answers: this.questionAnswers } })
         return;
       }
       

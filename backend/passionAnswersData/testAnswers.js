@@ -1,4 +1,5 @@
-const testAnswers = [
+// Sisältää sports and outdoor ja games kategoriat
+export const testAnswers = [
     {
      key: "korttipelit",
      label: "Korttipelit",
@@ -16,9 +17,6 @@ const testAnswers = [
          { key: 'ristiseiska', label: 'Ristiseiska' },
      ]
     },
-    /*
-        Pallopelit, mailapelit, yksilölait, joukkuelajit
-    */
     {
      key: "lautapelit",
      label: "Lautapelit",
@@ -345,4 +343,42 @@ const testAnswers = [
      subPassions: []
  
     }
+]
+
+export const newAnswers = [
+    {
+     key: "aivopahkinat",
+     label: "Aivopähkinät",
+     category: "games",
+     question1: ['a', 'b', 'c'],
+     question2: ['c'],
+     question3: ['a'],
+     question4: ['a'],
+     question5: ['b'],
+     question6: ['b'],
+     question7: ['a', 'b', 'c', 'd'],
+     subPassions: [
+         { key: 'palapelit', label: 'Palapelit' },
+         { key: 'sudokut ', label: 'Sudokut' },
+         { key: 'ristikot', label: 'Ristikot' },
+         { key: 'rubiikin-kuutiot ', label: 'Rubiikin kuutiot' },
+     ]
+    },
+  
+  {
+     key: "pelikoneet",
+     label: "Pelikoneet",
+     category: "games",
+     question1: ['b'],
+     question2: ['a'],
+     question3: ['c', 'd'],
+     question4: ['a'],
+     question5: ['c'],
+     question6: ['a'],
+     question7: ['a', 'b', 'c', 'd'],
+     subPassions: [
+         { key: 'flipperit', label: 'Flipperit' },
+         { key: 'arcadepelit ', label: 'Arcadepelit' },
+     ]
+  },
 ]
