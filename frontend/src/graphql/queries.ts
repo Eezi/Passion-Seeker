@@ -11,9 +11,23 @@ export const QUERY_PASSIONS = gql`
 `;
 
 export const QUERY_RESULT_PASSIONS = gql`
-    query getTestResults($answers: TestAnswerInput) {
+    query getTestResults($answers: [AnswerInput]) {
         getTestResults(answers: $answers) {
-           key
+        _id
+        category
+        label
+        key
+        question1
+        question2
+        question3
+        question4
+        question5
+        question6
+        question7
+        subPassions {
+            label 
+            key
+        }
         }
     }
 `;

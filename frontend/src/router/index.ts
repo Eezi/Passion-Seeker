@@ -31,13 +31,6 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/PassionTest.vue')
     
   },
-  {
-    path: '/passion-test/results',
-    name: 'TestResults',
-    props: true,
-    component: () => import('../views/TestResults.vue')
-    
-  }
 ]
 
 const router = createRouter({

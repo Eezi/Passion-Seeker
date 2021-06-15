@@ -4,4 +4,4 @@ interface Passion {
   category: string;
 }
 
-export default Passion;
+export default Passion

@@ -1,5 +1,9 @@
 <template>
     <div>
+    <div v-if="url === 'results'">
+      <test-results :testAnswers="questionAnswers" />
+    </div>
+    <div v-else>
       <h3>{{ stateQuestions.label }}</h3>
     <ul>
       <li @click="handleAnserClick(answer.option)" class="answer max-w-lg h-13 mx-auto p-3 bg-green-400 m-3 text-white rounded" v-for="(answer, key) in stateAnswers" :key="key">
@@ -7,15 +11,18 @@
       </li>
     </ul>
     </div>
+    </div>
 </template>
 <script lang="ts">
 import { defineComponent, ref, reactive } from 'vue';
 import { questions } from '../modules/questions';
+import TestResults from '../components/TestResults.vue';
 import Question from '../types/question';
 import Answer from '../types/answer';
+import { useRoute } from 'vue-router'
  export default defineComponent({
   name: 'PassionTest',
-  components: {  },
+  components: { TestResults },
   setup() {
     const stateQuestions = ref<Question>()
     const stateAnswers = ref<Question>()
@@ -29,8 +36,10 @@ import Answer from '../types/answer';
   },
 
   data: function() {
+      const route = useRoute();
     return {
       pageIndex: 0,
+      url: route.params.question,
       allAnswers: this.questionAnswers,
     }
   },
@@ -55,12 +64,7 @@ import Answer from '../types/answer';
       }
 
       if (this.pageIndex === questions.length) {
-        const newList = []
-        this.questionAnswers.forEach(element => {
-          newList.push(element) 
-        });
-        console.log('mikäs', newList)
-        this.$router.push({ name: 'TestResults', params: { answers: this.questionAnswers } })
+        this.$router.push('/passion-test/results')
         return;
       }
       
@@ -73,10 +77,15 @@ import Answer from '../types/answer';
   computed: {
   },
   created() {
-    const correctQuestions = questions.find(question => question.key === this.$route.params.question);
+    const route = useRoute();
+    const correctQuestions = questions.find(question => question.key === route.params.question);
     this.stateQuestions = correctQuestions;
     this.stateAnswers = correctQuestions?.answers;
   },
+  updated() {
+    const route = useRoute();
+    this.url = route.params.question;
+  }
 
 });
 </script>
