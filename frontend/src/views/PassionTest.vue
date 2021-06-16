@@ -4,9 +4,9 @@
       <test-results :testAnswers="questionAnswers" />
     </div>
     <div v-else>
-      <h3>{{ stateQuestions.label }}</h3>
+      <p class="text-2xl font-bold">{{ stateQuestions.label }}</p>
     <ul>
-      <li @click="handleAnserClick(answer.option)" class="answer max-w-lg h-13 mx-auto p-3 bg-green-400 m-3 text-white rounded" v-for="(answer, key) in stateAnswers" :key="key">
+      <li @click="handleAnserClick(answer.option)" class="answer max-w-lg h-13 mx-auto p-3 bg-blue-500 m-3 text-white rounded font-bold" v-for="(answer, key) in stateAnswers" :key="key">
         <strong> {{ answer.label }} </strong>
       </li>
     </ul>

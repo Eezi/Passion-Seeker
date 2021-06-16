@@ -1,12 +1,23 @@
 <template>
 <div class="container mx-auto"> 
-    <h1>Testitulokset</h1>
+    <h1 class="text-3xl mb-4">Testitulokset</h1>
+  <template v-if="loading">
+    <p>Loading...</p>
+  </template>
+  <template v-else-if="passions.length > 0">
   <div 
-  class="p-8 bg-blue-300 text-center bg-opacity-80 shadow-md rounded-md" 
-  v-for="passion in this.passions"
+  class="resultContainer p-8 text-center bg-opacity-80 shadow-md rounded-md" 
+  v-for="passion in passions"
   :key="passion.key">
-    <p class="font-medium text-2xl">{{ passion.label }}</p>
+    <h4 class="category text-xl">{{ passion.label }}</h4>
+    <div class="resultContainer flex justify-center">
+    <div v-for="subPassion in passion.subPassions" :key="subPassion.key">
+      <h6 class="subpassion text-lg shadow mx-3 font-bold" >{{ subPassion.label }}</h6>
+    </div>
+    </div>
   </div>
+  </template>
+  <p v-else>Ei löytynyt yhtään vastauksia lol! Hävisit pelin :(</p>
 </div>
 </template>
 
@@ -26,8 +37,8 @@ import Answer from '../types/answer';
   },
   setup() {
     const questionAnswers = ref<Answer[]>([])
-    //let results = ref<ResultPassion[]>([])
     const { result, loading } = useQuery(QUERY_RESULT_PASSIONS, { answers: questionAnswers })
+    console.log('reuslts', result)
     const passions = useResult(result, null, data => data.getTestResults)
     
     return {
@@ -50,5 +61,20 @@ import Answer from '../types/answer';
 });
 </script>
 
-<style>
+<style scoped>
+  .subpassion {
+    background: #b7094c;
+    border-radius: 4px;
+    padding: .5rem;
+  }
+  .resultContainer {
+    background: #0091ad;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+  .category {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+  }
 </style>
