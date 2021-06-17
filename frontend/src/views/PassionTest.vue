@@ -10,6 +10,14 @@
         <strong> {{ answer.label }} </strong>
       </li>
     </ul>
+    <div class="inline-flex">
+  <button @click="handleNextAndPrev('prev')" class="bg-gray-300 hover:bg-gray-400 text-white-800 font-bold py-2 px-4 rounded-l">
+    Edellinen
+  </button>
+  <button :disabled="disabled" @click="handleNextAndPrev('next')" class="stepButton bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r disabled:opacity-50">
+    Seuraava
+  </button>
+</div>
     </div>
     </div>
 </template>
@@ -41,10 +49,30 @@ import { useRoute } from 'vue-router'
       pageIndex: 0,
       url: route.params.question,
       allAnswers: this.questionAnswers,
+      currentStepAnswered: null,
     }
   },
 
   methods: {
+    handleNextAndPrev: function(direction: string) {
+      const questionKeys = questions.map(q => q.key);
+      const hasCurrentStepAnswered = this.questionAnswers.find(q => q.question === this.$route.params.question);
+      this.currentStepAnswered = hasCurrentStepAnswered;
+
+      if (this.pageIndex === questions.length) {
+        this.$router.push('/passion-test/results')
+        return;
+      }
+
+      if (hasCurrentStepAnswered && direction === 'next') {
+        this.pageIndex++
+        return this.$router.push(`/passion-test/${questionKeys[this.pageIndex]}`)
+      }
+      if (direction === 'prev' && this.pageIndex > 0) {
+        this.pageIndex--
+        return this.$router.push(`/passion-test/${questionKeys[this.pageIndex]}`)
+      }
+    },
     handleAnserClick: function(answer: string) {
       const newAnswer = {
        question: this.$route.params.question,
@@ -75,6 +103,12 @@ import { useRoute } from 'vue-router'
     }
   },
   computed: {
+    disabled: function() {
+      if (this.currentStepAnswered === null) {
+        return true
+      }
+      return false
+    }
   },
   created() {
     const route = useRoute();
@@ -84,6 +118,8 @@ import { useRoute } from 'vue-router'
   },
   updated() {
     const route = useRoute();
+    const correctQuestions = questions.find(question => question.key === route.params.question);
+    this.stateQuestions = correctQuestions;
     this.url = route.params.question;
   }
 
@@ -94,5 +130,8 @@ import { useRoute } from 'vue-router'
         transform: scale(1.02);
         cursor: pointer;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .stepBottom:focus {
+      outline: 0;
     }
 </style>
