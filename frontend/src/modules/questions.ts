@@ -41,9 +41,10 @@ export const questions: { key: string, label: string, answers: Array<object> } [
         label: 'Mitä kaipaat harrastukselta?',
         key: 'question5',
         answers: [
-           { label: 'Vauhtia', option: 'a' },
+           { label: 'Vauhtia ja jännitystä', option: 'a' },
            { label: 'Uuden oppimista ja keskittymistä', option: 'b' },
            { label: 'Rentoutumista tai hyvinvointia', option: 'c' },
+           { label: 'Heittäytymistä ja hauskanpitoa', option: 'd' },
         ]
     },
     {

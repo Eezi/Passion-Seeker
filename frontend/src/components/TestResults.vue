@@ -1,6 +1,9 @@
 <template>
 <div class="container mx-auto"> 
+    <header class="mb-6">
     <h1 class="text-3xl mb-4">Testitulokset</h1>
+    <router-link @click="resetTestAnswers" to="/passion-test/question1" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Tee testi uudelleen</router-link>
+    </header>
   <template v-if="loading">
     <p>Loading...</p>
   </template>
@@ -17,7 +20,7 @@
     </div>
   </div>
   </template>
-  <p v-else>Ei löytynyt yhtään vastauksia lol! Hävisit pelin :(</p>
+  <p v-else class="text-lg font-bold">Ei löytynyt yhtään vastauksia lol! Hävisit pelin :(</p>
 </div>
 </template>
 
