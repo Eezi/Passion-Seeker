@@ -382,3 +382,111 @@ export const newAnswers = [
      ]
   },
 ]
+
+
+export const freshAnswers = [
+    {
+     key: "musiikin-tekeminen",
+     label: "Musiikin tekeminen",
+     category: "music",
+     question1: ['c'],
+     question2: ['c'],
+     question3: ['a'],
+     question4: ['a'],
+     question5: ['b'],
+     question6: ['b'],
+     question7: ['a', 'c'],
+     subPassions: [
+         { key: 'musiikin-sanoittaminen', label: 'Musiikin sanoittaminen' },
+         { key: 'musiikin-säveltäminen', label: 'Musiikin säveltäminen' },
+         { key: 'dj', label: 'DJ' },
+         { key: 'musiikin-editointi', label: 'Musiikin editointi' },
+     ]
+    },
+  
+  {
+     key: "musisointi",
+     label: "Musisointi",
+     category: "music",
+     question1: ['a'],
+     question2: ['b'],
+     question3: ['a'],
+     question4: ['a', 'd'],
+     question5: ['b'],
+     question6: ['a', 'b'],
+     question7: ['a', 'b', 'c', 'd'],
+     subPassions: [
+         { key: 'rappaaminen', label: 'Räppääminen' },
+         { key: 'laulaminen', label: 'Laulaminen' },
+         { key: 'banditoiminta', label: 'Bänditoiminta' },
+         { key: 'erilaiset-soittimet', label: 'Erilaiset soittimet, esim kitara, piano ja rummut' },
+     ]
+  },
+
+  {
+     key: "teatteri",
+     label: "Teatteri",
+     category: "performing-arts",
+     question1: ['b'],
+     question2: ['a'],
+     question3: ['d'],
+     question4: ['d'],
+     question5: ['d'],
+     question6: ['a'],
+     question7: ['b', 'd'],
+     subPassions: [
+         { key: 'naytteleminen', label: 'Näytteleminen' },
+         { key: 'nukketeatteri', label: 'Nukketeatteri' },
+     ]
+  },
+  {
+     key: "silmankaantotemput",
+     label: "Silmänkääntötemput",
+     category: "performing-arts",
+     question1: ['a'],
+     question2: ['a'],
+     question3: ['a'],
+     question4: ['a', 'd'],
+     question5: ['d'],
+     question6: ['b'],
+     question7: ['c', 'd'],
+     subPassions: [
+         { key: 'korttitemput', label: 'Korttitemput' },
+         { key: 'taikatemput', label: 'Taikatemput' },
+     ]
+  },
+  {
+     key: "komedia",
+     label: "Komedia",
+     category: "performing-arts",
+     question1: ['a', 'c'],
+     question2: ['b'],
+     question3: ['d'],
+     question4: ['d'],
+     question5: ['d'],
+     question6: ['a'],
+     question7: ['a', 'b'],
+     subPassions: [
+         { key: 'stand-up', label: 'Stand up' },
+         { key: 'imitointi', label: 'Imitointi' },
+         { key: 'vatsastapuhuminen', label: 'vatsastapuhuminen' },
+     ]
+  },
+  {
+     key: "extreme-lajit",
+     label: "Extreme-lajit",
+     category: "extreme-hobbies",
+     question1: ['', 'c'],
+     question2: [''],
+     question3: [''],
+     question4: [''],
+     question5: [''],
+     question6: [''],
+     question7: ['', 'b'],
+     subPassions: [
+         { key: 'varjoliito', label: 'Varjoliito' },
+         { key: 'laskuvarjohyppaaminen', label: 'Laskuvarjohyppääminen' },
+         { key: 'kalliosukellus', label: 'Kalliosukellus' },
+     ]
+  },
+]
