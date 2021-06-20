@@ -5,7 +5,7 @@
     <router-link @click="resetTestAnswers" to="/passion-test/question1" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Tee testi uudelleen</router-link>
     </header>
   <template v-if="loading">
-    <p>Loading...</p>
+    <p>Haetaan tuloksia...</p>
   </template>
   <template v-else-if="passions.length > 0">
   <div 
@@ -35,6 +35,10 @@ import Answer from '../types/answer';
   props: {
       testAnswers: {
         type: Array,
+        required: true
+      },
+      resetTestAnswers: {
+        type: Function,
         required: true
       }
   },

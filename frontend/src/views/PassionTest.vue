@@ -1,7 +1,7 @@
 <template>
     <div>
     <div v-if="url === 'results'">
-      <test-results :testAnswers="questionAnswers" />
+      <test-results :resetTestAnswers="resetTestAnswers" :testAnswers="questionAnswers" />
     </div>
     <div v-else>
       <p class="text-2xl font-bold">{{ stateQuestions.label }}</p>
@@ -100,6 +100,10 @@ import { useRoute } from 'vue-router'
       const newQuestions = questions.find(q => q.key === questionKeys[this.pageIndex]);
       this.stateQuestions = newQuestions;
       this.stateAnswers = newQuestions?.answers; 
+    },
+
+    resetTestAnswers: function() {
+      this.questionAnswers = [];
     }
   },
   computed: {
@@ -110,6 +114,7 @@ import { useRoute } from 'vue-router'
       return false
     }
   },
+  // Voisi tehdä watch funktion urlille
   created() {
     const route = useRoute();
     const correctQuestions = questions.find(question => question.key === route.params.question);

@@ -4,7 +4,7 @@ import Passion from './models/passionModel.js'
 import TestAnswer from './models/testAnswerModel.js'
 import connectDB from './config/db.js'
 import { getFileData  } from './utils/handleTextFiles.js'
-import { testAnswers  } from './passionAnswersData/testAnswers.js'
+import { freshAnswers } from './passionAnswersData/testAnswers.js'
 
 dotenv.config()
 
@@ -14,8 +14,8 @@ const importData = async () => {
     try {
         //const fileData = await getFileData()
 
-      await TestAnswer.insertMany(testAnswers)
-        console.log('testdata', testAnswers)
+      await TestAnswer.insertMany(freshAnswers)
+        console.log('testdata', freshAnswers)
        //console.log('Data imported!', fileData)
        process.exit()
 
