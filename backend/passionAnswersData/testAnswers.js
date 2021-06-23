@@ -634,5 +634,78 @@ export const freshAnswers = [
          { key: 'juomien-maistelu', label: 'Juomien maistelu' },
          { key: 'ruokien-maistelu', label: 'Ruokien maistelu' },
      ]
+  },
+  {
+     key: "suunnittelu",
+     label: "Suunnittelu",
+     category: "creative",
+     question1: ['c'],
+     question2: ['c'],
+     question3: ['a'],
+     question4: ['a'],
+     question5: ['b'],
+     question6: ['b'],
+     question7: ['b', 'c'],
+     subPassions: [
+         { key: 'sisustaminen', label: 'Sisustaminen' },
+         { key: 'sarjakuvataide', label: 'Sarjakuvataide' },
+         { key: 'taloussuunnittelu', label: 'Taloussuunnittelu' },
+         { key: 'kalusteiden suunnittelu', label: 'Kalusteiden suunnittelu' },
+     ]
+  },
+  {
+     key: "luova-tekeminen",
+     label: "Luova tekeminen",
+     category: "creative",
+     question1: ['b'],
+     question2: ['c'],
+     question3: ['c', 'a'],
+     question4: ['a'],
+     question5: ['b', 'c'],
+     question6: ['a', 'b'],
+     question7: ['a', 'b', 'd'],
+     subPassions: [
+         { key: 'sosiaalinen media', label: 'Sosiaalinen media' },
+         { key: 'podcasting', label: 'Podcasting' },
+         { key: 'runous', label: 'Runous' },
+         { key: 'bloggaaminen', label: 'Bloggaaminen' },
+         { key: 'cosplaying', label: 'Cosplaying' },
+     ]
+  },
+  {
+     key: "keraily",
+     label: "Keräily",
+     category: "entertaiment",
+     question1: ['b'],
+     question2: ['b'],
+     question3: ['c'],
+     question4: ['a'],
+     question5: ['c'],
+     question6: ['b'],
+     question7: ['a', 'b'],
+     subPassions: [
+         { key: 'kolikot', label: 'Kolikot' },
+         { key: 'postimerkit', label: 'Postimerkit' },
+         { key: 'kortit', label: 'Kortit' },
+     ]
+  },
+  {
+     key: "opiskelu",
+     label: "Opiskelu",
+     category: "entertaiment",
+     question1: ['c'],
+     question2: ['c'],
+     question3: ['a', 'c'],
+     question4: ['a'],
+     question5: ['b'],
+     question6: ['b'],
+     question7: ['a', 'b', 'c', 'd'],
+     subPassions: [
+         { key: 'filosofia', label: 'Filosofia' },
+         { key: 'psykologia', label: 'Psykologia' },
+         { key: 'fysiikka', label: 'Fysiikka' },
+         { key: 'matikka', label: 'Matikka' },
+         { key: 'historia', label: 'Historia' },
+     ]
   }
 ]
