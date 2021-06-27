@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid grid-cols-1 md:grid-cols-3 px-5 gap-4">
   <div 
   class="p-8 bg-blue-300 text-center bg-opacity-80 shadow-md rounded-md" 
   v-for="passion in passions"

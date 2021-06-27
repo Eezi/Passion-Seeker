@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-3 px-5">
   <div 
   class="category motion-safe:hover:scale-110 p-8 bg-green-300 text-center bg-opacity-80 shadow-md rounded-md" 
   v-for="cate in categories"

@@ -385,7 +385,7 @@ export const newAnswers = [
 
 
 export const freshAnswers = [
-    {
+  /*{
      key: "musiikin-tekeminen",
      label: "Musiikin tekeminen",
      category: "music",
@@ -634,7 +634,7 @@ export const freshAnswers = [
          { key: 'juomien-maistelu', label: 'Juomien maistelu' },
          { key: 'ruokien-maistelu', label: 'Ruokien maistelu' },
      ]
-  },
+  },*/
   {
      key: "suunnittelu",
      label: "Suunnittelu",

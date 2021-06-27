@@ -1,28 +1,29 @@
 <template>
-    <div>
+    <div class="px-6">
     <div v-if="url === 'results'">
       <test-results :resetTestAnswers="resetTestAnswers" :testAnswers="questionAnswers" />
     </div>
     <div v-else>
-      <p class="text-2xl font-bold">{{ stateQuestions.label }}</p>
+      <p class="text-xl md:text-2xl font-bold">{{ stateQuestions.label }}</p>
     <ul>
       <li @click="handleAnserClick(answer.option)" class="answer max-w-lg h-13 mx-auto p-3 bg-blue-500 m-3 text-white rounded font-bold" v-for="(answer, key) in stateAnswers" :key="key">
         <strong> {{ answer.label }} </strong>
       </li>
     </ul>
-    <div class="inline-flex">
+    
+    <!--<div class="inline-flex">
   <button @click="handleNextAndPrev('prev')" class="bg-gray-300 hover:bg-gray-400 text-white-800 font-bold py-2 px-4 rounded-l">
     Edellinen
   </button>
   <button :disabled="disabled" @click="handleNextAndPrev('next')" class="stepButton bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r disabled:opacity-50">
     Seuraava
   </button>
-</div>
+</div>-->
     </div>
     </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref, reactive } from 'vue';
+import { defineComponent, ref, reactive  } from 'vue';
 import { questions } from '../modules/questions';
 import TestResults from '../components/TestResults.vue';
 import Question from '../types/question';
@@ -35,7 +36,9 @@ import { useRoute } from 'vue-router'
     const stateQuestions = ref<Question>()
     const stateAnswers = ref<Question>()
     const questionAnswers = reactive<Answer[]>([])
-   
+    const route = useRoute();
+    console.log('route', route.params.question)
+
     return {
       stateQuestions,
       stateAnswers,
@@ -104,6 +107,11 @@ import { useRoute } from 'vue-router'
 
     resetTestAnswers: function() {
       this.questionAnswers = [];
+      this.pageIndex = 0;
+      const correctQuestions = questions.find(question => question.key === this.$route.params.question);
+      this.stateQuestions = correctQuestions;
+      console.log('mikäs', correctQuestions)
+      this.stateAnswers = correctQuestions?.answers;
     }
   },
   computed: {
@@ -120,11 +128,14 @@ import { useRoute } from 'vue-router'
     const correctQuestions = questions.find(question => question.key === route.params.question);
     this.stateQuestions = correctQuestions;
     this.stateAnswers = correctQuestions?.answers;
+    this.questionAnswers = [];
+    this.pageIndex = 0;
   },
   updated() {
     const route = useRoute();
     const correctQuestions = questions.find(question => question.key === route.params.question);
     this.stateQuestions = correctQuestions;
+    this.stateAnswers = correctQuestions?.answers;
     this.url = route.params.question;
   }
 
