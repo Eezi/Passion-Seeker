@@ -11,14 +11,14 @@
       </li>
     </ul>
     
-    <!--<div class="inline-flex">
-  <button @click="handleNextAndPrev('prev')" class="bg-gray-300 hover:bg-gray-400 text-white-800 font-bold py-2 px-4 rounded-l">
+    <div class="inline-flex">
+  <button @click="handleNextAndPrev('prev')" class="focus:outline-none bg-yellow-300 hover:bg-yellow-400 text-white-800 font-bold py-2 px-4 rounded-l">
     Edellinen
   </button>
-  <button :disabled="disabled" @click="handleNextAndPrev('next')" class="stepButton bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r disabled:opacity-50">
+  <button :disabled="disabled" @click="handleNextAndPrev('next')" class="focus:outline-none bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-bold py-2 px-4 rounded-r disabled:opacity-50">
     Seuraava
   </button>
-</div>-->
+</div>
     </div>
     </div>
 </template>
@@ -36,8 +36,6 @@ import { useRoute } from 'vue-router'
     const stateQuestions = ref<Question>()
     const stateAnswers = ref<Question>()
     const questionAnswers = reactive<Answer[]>([])
-    const route = useRoute();
-    console.log('route', route.params.question)
 
     return {
       stateQuestions,
@@ -81,9 +79,22 @@ import { useRoute } from 'vue-router'
        question: this.$route.params.question,
        answer: answer
       };
-      if (!this.questionAnswers.find(q => q.question === 'question7')) {
+
+      const alreadyHasAnswer = this.questionAnswers.find((q) => q.question === newAnswer.question);
+
+      if (alreadyHasAnswer) {
+        this.questionAnswers.map((answer: object, index) => {
+          if (alreadyHasAnswer.question === this.$route.params.question) {
+            this.questionAnswers[index] = newAnswer;
+          }
+          return answer
+        });
+      }
+
+      if (!this.questionAnswers.find(q => q.question === 'question7') && !alreadyHasAnswer) {
         this.questionAnswers.push(newAnswer)
       }
+    
       this.handleNextPage();
     },
 
@@ -110,7 +121,6 @@ import { useRoute } from 'vue-router'
       this.pageIndex = 0;
       const correctQuestions = questions.find(question => question.key === this.$route.params.question);
       this.stateQuestions = correctQuestions;
-      console.log('mikäs', correctQuestions)
       this.stateAnswers = correctQuestions?.answers;
     }
   },
@@ -146,8 +156,5 @@ import { useRoute } from 'vue-router'
         transform: scale(1.02);
         cursor: pointer;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    .stepBottom:focus {
-      outline: 0;
     }
 </style>

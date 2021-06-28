@@ -9,10 +9,10 @@
   </template>
   <template v-else-if="passions.length > 0">
   <div 
-  class="resultContainer p-12 text-center bg-opacity-80 shadow-md rounded-md mb-4" 
+  class="resultContainer shadow-2xl p-12 text-center bg-opacity-80 shadow-md rounded-md mb-4" 
   v-for="passion in passions"
   :key="passion.key">
-    <h4 class="category text-xl">{{ passion.label }}</h4>
+    <h4 class="category text-gray-800	 text-xl">{{ passion.label }}</h4>
     <div class="resultContainer flex justify-center flex-wrap px-5">
     <div v-for="subPassion in passion.subPassions" :key="subPassion.key">
       <h6 class="subpassion text-lg shadow mx-3 my-3 font-bold" >{{ subPassion.label }}</h6>
@@ -29,7 +29,6 @@ import { defineComponent, ref } from 'vue';
 import { useQuery, useResult } from '@vue/apollo-composable'
 import { QUERY_RESULT_PASSIONS } from '../graphql/queries'
 import Answer from '../types/answer';
-//import ResultPassion from '../types/passionResult';
  export default defineComponent({
   name: 'TestResults',
   props: {
@@ -45,7 +44,6 @@ import Answer from '../types/answer';
   setup() {
     const questionAnswers = ref<Answer[]>([])
     const { result, loading } = useQuery(QUERY_RESULT_PASSIONS, { answers: questionAnswers })
-    console.log('reuslts', result)
     const passions = useResult(result, null, data => data.getTestResults)
     
     return {
@@ -70,14 +68,14 @@ import Answer from '../types/answer';
 
 <style scoped>
   .subpassion {
-    background: #b7094c;
+    background: #7400b8;
     border-radius: 4px;
     padding: 1rem 3rem;
   }
   .resultContainer {
-    background: #0091ad;
-    color: #fff;
+    background: #fff;
     margin-bottom: 1.5rem;
+    color: #fff;
   }
   .category {
     font-size: 1.7rem;
