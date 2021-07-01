@@ -44,7 +44,7 @@ import Answer from '../types/answer';
   setup() {
     const questionAnswers = ref<Answer[]>([])
     const { result, loading } = useQuery(QUERY_RESULT_PASSIONS, { answers: questionAnswers })
-    const passions = useResult(result, null, data => data.getTestResults)
+    const passions = useResult(result, [], data => data.getTestResults)
     
     return {
       loading,
