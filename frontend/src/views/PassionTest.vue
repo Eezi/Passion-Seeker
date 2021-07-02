@@ -1,12 +1,12 @@
 <template>
     <div class="px-6">
     <div v-if="url === 'results'">
-      <test-results :resetTestAnswers="resetTestAnswers" :testAnswers="questionAnswers" />
+      <test-results :resetTestAnswers="resetTestAnswers" :testAnswers="answers" />
     </div>
     <div v-else>
       <p class="text-xl md:text-2xl font-bold">{{ stateQuestions.label }}</p>
     <ul>
-      <li @click="handleAnserClick(answer.option)" class="answer max-w-lg h-13 mx-auto p-3 bg-blue-500 m-3 text-white rounded font-bold" v-for="(answer, key) in stateAnswers" :key="key">
+      <li @click="handleAnswerClick(answer.option)" :class="isSelected(answer.option)" class="answer max-w-lg h-13 mx-auto p-3 bg-blue-500 m-3 text-white rounded font-bold" v-for="(answer, key) in stateAnswers" :key="key">
         <strong> {{ answer.label }} </strong>
       </li>
     </ul>
@@ -15,7 +15,7 @@
   <button @click="handleNextAndPrev('prev')" class="focus:outline-none bg-yellow-300 hover:bg-yellow-400 text-white-800 font-bold py-2 px-4 rounded-l">
     Edellinen
   </button>
-  <button :disabled="disabled" @click="handleNextAndPrev('next')" class="focus:outline-none bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-bold py-2 px-4 rounded-r disabled:opacity-50">
+  <button @click="handleNextAndPrev('next')" class="focus:outline-none bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-bold py-2 px-4 rounded-r disabled:opacity-50">
     Seuraava
   </button>
 </div>
@@ -23,7 +23,7 @@
     </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref, reactive  } from 'vue';
+import { defineComponent, ref } from 'vue';
 import { questions } from '../modules/questions';
 import TestResults from '../components/TestResults.vue';
 import Question from '../types/question';
@@ -35,118 +35,96 @@ import { useRoute } from 'vue-router'
   setup() {
     const stateQuestions = ref<Question>()
     const stateAnswers = ref<Question>()
-    const questionAnswers = reactive<Answer[]>([])
 
     return {
       stateQuestions,
       stateAnswers,
-      questionAnswers,
     }
   },
 
   data: function() {
       const route = useRoute();
     return {
-      pageIndex: 0,
       url: route.params.question,
-      allAnswers: this.questionAnswers,
-      currentStepAnswered: null,
+      answers: [] as Answer[],
     }
   },
+
+  // 1. Pitää tehdä tarkistus seurava nappulaan ettei vastaus jää tyhjäksi
+  // 2. Vastaus vaihtoehtoihin pitää saada esim eri väri border kun valitsee sen
 
   methods: {
     handleNextAndPrev: function(direction: string) {
       const questionKeys = questions.map(q => q.key);
-      const hasCurrentStepAnswered = this.questionAnswers.find(q => q.question === this.$route.params.question);
-      this.currentStepAnswered = hasCurrentStepAnswered;
 
-      if (this.pageIndex === questions.length) {
-        this.$router.push('/passion-test/results')
-        return;
+      const currentIndex = questionKeys.indexOf(this.$route.params.question.toString());
+
+      if (currentIndex === questionKeys.length - 1) {
+        return this.$router.push(`/passion-test/results`)
       }
 
-      if (hasCurrentStepAnswered && direction === 'next') {
-        this.pageIndex++
-        return this.$router.push(`/passion-test/${questionKeys[this.pageIndex]}`)
+      if (direction === 'next') {
+        this.$router.push(`/passion-test/${questionKeys[currentIndex + 1]}`)
       }
-      if (direction === 'prev' && this.pageIndex > 0) {
-        this.pageIndex--
-        return this.$router.push(`/passion-test/${questionKeys[this.pageIndex]}`)
+       
+      if (direction === 'prev') {
+        this.$router.push(`/passion-test/${questionKeys[currentIndex - 1]}`)
       }
+      const newQuestions = questions.find(q => q.key === questionKeys[currentIndex + 1]);
+      this.stateQuestions = newQuestions;
+      this.stateAnswers = newQuestions?.answers; 
+
     },
-    handleAnserClick: function(answer: string) {
+    handleAnswerClick: function(answer: string) {
       const newAnswer = {
        question: this.$route.params.question,
        answer: answer
       };
 
-      const alreadyHasAnswer = this.questionAnswers.find((q) => q.question === newAnswer.question);
+      const alreadySelected = this.isSelected(newAnswer.answer);
 
-      if (alreadyHasAnswer) {
-        this.questionAnswers.map((answer: object, index) => {
-          if (alreadyHasAnswer.question === this.$route.params.question) {
-            this.questionAnswers[index] = newAnswer;
-          }
-          return answer
-        });
+      if (alreadySelected === 'notSelected') {
+        this.answers.push(newAnswer)
       }
 
-      if (!this.questionAnswers.find(q => q.question === 'question7') && !alreadyHasAnswer) {
-        this.questionAnswers.push(newAnswer)
+      if (alreadySelected === 'selected') {
+        const index = this.answers.map(q => q.answer).indexOf(newAnswer.answer);
+        this.answers.splice(index, 1);
       }
-    
-      this.handleNextPage();
-    },
-
-    handleNextPage: function() {
-      const questionKeys = questions.map(q => q.key);
-
-      if (this.pageIndex <= questionKeys.length) {
-        this.pageIndex++;
-      }
-
-      if (this.pageIndex === questions.length) {
-        this.$router.push('/passion-test/results')
-        return;
-      }
-      
-      this.$router.push(`/passion-test/${questionKeys[this.pageIndex]}`)
-      const newQuestions = questions.find(q => q.key === questionKeys[this.pageIndex]);
-      this.stateQuestions = newQuestions;
-      this.stateAnswers = newQuestions?.answers; 
     },
 
     resetTestAnswers: function() {
-      this.questionAnswers = [];
-      this.pageIndex = 0;
-      const correctQuestions = questions.find(question => question.key === this.$route.params.question);
-      this.stateQuestions = correctQuestions;
-      this.stateAnswers = correctQuestions?.answers;
+      this.answers = [];
+      this.handleCorrectQuestions();
+    },
+    isSelected(key: string) {
+     const currentQuestions = this.answers.filter(q => q.question === this.url).map(c => c.answer);
+     if (currentQuestions.includes(key)) {
+       return 'selected';
+     }
+      return 'notSelected';
+    },
+    handleCorrectQuestions() {
+    this.url = this.$route.params.question;
+    const correctQuestions = questions.find(question => question.key === this.$route.params.question);
+    this.stateQuestions = correctQuestions;
+    this.stateAnswers = correctQuestions?.answers;
     }
   },
   computed: {
-    disabled: function() {
+    /*disabled: function() {
       if (this.currentStepAnswered === null) {
         return true
       }
       return false
-    }
+    },*/
   },
-  // Voisi tehdä watch funktion urlille
+
   created() {
-    const route = useRoute();
-    const correctQuestions = questions.find(question => question.key === route.params.question);
-    this.stateQuestions = correctQuestions;
-    this.stateAnswers = correctQuestions?.answers;
-    this.questionAnswers = [];
-    this.pageIndex = 0;
+    this.resetTestAnswers();
   },
   updated() {
-    const route = useRoute();
-    const correctQuestions = questions.find(question => question.key === route.params.question);
-    this.stateQuestions = correctQuestions;
-    this.stateAnswers = correctQuestions?.answers;
-    this.url = route.params.question;
+    this.handleCorrectQuestions();
   }
 
 });
@@ -156,5 +134,11 @@ import { useRoute } from 'vue-router'
         transform: scale(1.02);
         cursor: pointer;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .selected {
+      outline: 3px solid orange;
+    }
+    .notSelected {
+      outline: none;
     }
 </style>
