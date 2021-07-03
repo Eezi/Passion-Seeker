@@ -11,6 +11,7 @@
       </li>
     </ul>
     
+  <p v-if="!hasNotAnswered" class="mb-2 text-red-600 text-base">Kysymykseen pitää vastata ensin</p> 
     <div class="inline-flex">
   <button @click="handleNextAndPrev('prev')" class="focus:outline-none bg-yellow-300 hover:bg-yellow-400 text-white-800 font-bold py-2 px-4 rounded-l">
     Edellinen
@@ -18,7 +19,7 @@
   <button @click="handleNextAndPrev('next')" class="focus:outline-none bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-bold py-2 px-4 rounded-r disabled:opacity-50">
     Seuraava
   </button>
-</div>
+  </div>
     </div>
     </div>
 </template>
@@ -45,13 +46,11 @@ import { useRoute } from 'vue-router'
   data: function() {
       const route = useRoute();
     return {
+      hasNotAnswered: true as boolean,
       url: route.params.question,
       answers: [] as Answer[],
     }
   },
-
-  // 1. Pitää tehdä tarkistus seurava nappulaan ettei vastaus jää tyhjäksi
-  // 2. Vastaus vaihtoehtoihin pitää saada esim eri väri border kun valitsee sen
 
   methods: {
     handleNextAndPrev: function(direction: string) {
@@ -59,12 +58,21 @@ import { useRoute } from 'vue-router'
 
       const currentIndex = questionKeys.indexOf(this.$route.params.question.toString());
 
+      if (this.hasAnswerForThisQuestion(direction)) {
+        this.hasNotAnswered = false;
+        return;
+      }
+      if (direction === 'prev' && currentIndex == 0) {
+        return;
+      }
+      
       if (currentIndex === questionKeys.length - 1) {
         return this.$router.push(`/passion-test/results`)
       }
 
       if (direction === 'next') {
         this.$router.push(`/passion-test/${questionKeys[currentIndex + 1]}`)
+        this.hasNotAnswered = true;
       }
        
       if (direction === 'prev') {
@@ -74,6 +82,12 @@ import { useRoute } from 'vue-router'
       this.stateQuestions = newQuestions;
       this.stateAnswers = newQuestions?.answers; 
 
+    },
+    hasAnswerForThisQuestion (direction: string) {
+      if (!this.answers?.map(a => a.question)?.includes(this.url) && direction === 'next') {
+        return true;
+      }
+      return false;
     },
     handleAnswerClick: function(answer: string) {
       const newAnswer = {
@@ -140,5 +154,8 @@ import { useRoute } from 'vue-router'
     }
     .notSelected {
       outline: none;
+    }
+    .warn {
+      display: block;
     }
 </style>
