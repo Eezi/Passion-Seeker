@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "concurrently \"npm run server arg\" \"cd frontend && npm run serve arg\"",
+    "start": "concurrently \"npm run server arg\" \"cd frontend && npm run serve\"",
     "server": "nodemon backend/server",
     "data:destroy": "node backend/seeder -d",
     "data:import": "node backend/seeder",

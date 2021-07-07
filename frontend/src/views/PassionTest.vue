@@ -4,7 +4,8 @@
       <test-results :resetTestAnswers="resetTestAnswers" :testAnswers="answers" />
     </div>
     <div v-else>
-      <p class="text-xl md:text-2xl font-bold">{{ stateQuestions.label }}</p>
+      <p class="text-xl mb-2 md:text-2xl font-bold">{{ stateQuestions.label }}</p>
+      <p class="text-md mb-6 md:text-lg font-bold text-yellow-500">Voit valita useita vaihtoehtoja</p>
     <ul>
       <li @click="handleAnswerClick(answer.option)" :class="isSelected(answer.option)" class="answer max-w-lg h-13 mx-auto p-3 bg-blue-500 m-3 text-white rounded font-bold" v-for="(answer, key) in stateAnswers" :key="key">
         <strong> {{ answer.label }} </strong>
@@ -150,7 +151,7 @@ import { useRoute } from 'vue-router'
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     .selected {
-      outline: 3px solid orange;
+      outline: 4px solid rgb(255, 156, 26);
     }
     .notSelected {
       outline: none;
