@@ -21,7 +21,7 @@ app.use(notFound);
 
 app.use(errorHandler);
 
-const __dirname = path.resolve();
+//const __dirname = path.resolve();
 
 // HAndle production
 
