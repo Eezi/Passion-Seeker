@@ -31,21 +31,17 @@ if(process.env.NODE_ENV === 'production'){
 
   //Handle SPA
   app.get('/.*/', (req, res) => res.sendFile(__dirname, '/public/index.html'));
-} else {
-   app.get('/', (req, res) => {
-   res.send('API is running now...')
-})
-}      
+} 
 const PORT = process.env.PORT || 5000;
 
 
-/*server.listen().then(({ url }) => {
+server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
-});*/
+});
 
-app.listen(
+/*app.listen(
   PORT,
   console.log(
     `Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`
   )
-);
+);*/
