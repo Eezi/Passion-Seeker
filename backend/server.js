@@ -25,13 +25,14 @@ const __dirname = path.resolve();
 
 // HAndle production
 if(process.env.NODE_ENV === 'production'){
+  console.log('tuleeko')
   app.use(express.static(path.join(__dirname, '/frontend/dist'))) 
   app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html')))
 } 
 const PORT = process.env.PORT || 4000;
 
 
-server.listen().then(({ url }) => {
+server.listen(PORT).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
 
