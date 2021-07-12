@@ -13,7 +13,7 @@
     "server": "node backend/server",
     "data:destroy": "node backend/seeder -d",
     "data:import": "node backend/seeder",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
