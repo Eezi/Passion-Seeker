@@ -10,7 +10,7 @@
   "scripts": {
     "build-app": "git pull && npm run build-client && npm install && npm start",
     "build-client": "cd frontend && npm run build-app && cd ..",
-    "start": "node backenc/server.js",
+    "start": "node backend/server.js",
     "dev": "concurrently \"npm run server arg\" \"cd frontend && npm run start\"",
     "server": "node backend/server",
     "data:destroy": "node backend/seeder -d",
