@@ -8,8 +8,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node backend/server.js",
-    "dev": "concurrently \"npm run server arg\" \"cd frontend && npm run start\"",
+    "dev": "node backend/server.js",
+    "start": "concurrently \"npm run server arg\" \"cd frontend && npm run start\"",
     "server": "node backend/server",
     "data:destroy": "node backend/seeder -d",
     "data:import": "node backend/seeder",
