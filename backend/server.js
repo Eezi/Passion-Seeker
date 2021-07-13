@@ -22,11 +22,12 @@ const __dirname = path.resolve();
 
 // HAndle production
 if(process.env.NODE_ENV === 'production'){
-  app.use(serveStatic(__dirname + '/dist'));
+  //app.use(serveStatic(__dirname + '/dist'));
   //app.use(express.static(__dirname + '/public/'))
-  app.get('/.*/', (req, res) => res.sendFile(path.resolve(__dirname + '/dist/index.html')));
+  //app.get('/.*/', (req, res) => res.sendFile(path.resolve(__dirname + '/dist/index.html')));
   //app.use(express.static('public')); 
-  //app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html')))
+  app.use(express.static(path.join(__dirname, '/frontend/dist'))) 
+  app.get('/.*/', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html')))
    // Static folder
    /*app.use(express.static(__dirname + '/public/'));
 
