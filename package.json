@@ -8,8 +8,6 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "build-app": "git pull && npm run build-client && npm install && npm start",
-    "build-client": "cd frontend && npm run build-app && cd ..",
     "start": "node backend/server.js",
     "dev": "concurrently \"npm run server arg\" \"cd frontend && npm run start\"",
     "server": "node backend/server",
