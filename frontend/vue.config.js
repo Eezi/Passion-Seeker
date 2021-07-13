@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  outputDir: path.resolve(__dirname, '../backend/public'),
+  outputDir: path.resolve(__dirname, '../backend/dist'),
   devServer: {
     proxy: 'http://localhost:4000'
   },
