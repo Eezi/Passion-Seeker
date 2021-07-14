@@ -48,9 +48,9 @@ server.listen({ port: 4000 }).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
 
-app.listen(
+/*app.listen(
   PORT,
   console.log(
     `Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`
   )
-);
+);*/
