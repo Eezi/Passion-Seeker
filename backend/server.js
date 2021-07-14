@@ -29,7 +29,7 @@ if(process.env.NODE_ENV === 'production'){
   //app.use(express.static('public')); 
   app.use(express.static(path.join(__dirname, "./backend/dist")))
   app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, './dist', 'index.html'))
+    res.sendFile(path.join(__dirname, './backend/dist', 'index.html'))
 })
    // Static folder
    /*app.use(express.static(__dirname + '/public/'));
