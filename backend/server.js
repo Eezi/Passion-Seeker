@@ -19,13 +19,13 @@ app.use(notFound);
 app.use(errorHandler);
 
 const __dirname = path.resolve();
-console.log('dir', path.join(__dirname, './backend/dist/'))
+
 
 // HAndle production
 if(process.env.NODE_ENV === 'production'){
-  app.use(serveStatic(__dirname + './backend/dist'));
-  //app.use(express.static(__dirname + '/public/'))
-  app.get('/.*/', (req, res) => res.sendFile(path.resolve(__dirname + './backend/dist/index.html')));
+  //app.use(serveStatic(__dirname + './backend/dist'));
+  app.use(express.static(__dirname + '/dist/'))
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + '/dist/index.html'));
   //app.use(express.static('public')); 
   /*app.use(express.static(path.join(__dirname, "./backend/dist")))
   app.get('/*', (req, res) => {
