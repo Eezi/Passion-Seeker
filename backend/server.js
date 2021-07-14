@@ -43,7 +43,7 @@ if(process.env.NODE_ENV === 'production'){
 const PORT = process.env.PORT || 5000;
 
 
-server.listen({ port: 4000 }).then(({ url }) => {
+server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
 
   console.log(`🚀  Server ready at ${url}`);
 });
