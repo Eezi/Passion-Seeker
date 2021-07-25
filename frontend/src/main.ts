@@ -6,7 +6,7 @@ import '../src/index.css'
 import router from './router'
 
 const defaultClient = new ApolloClient({
-  uri: `${process.env.BASE_URL}/graphql`,
+  uri: 'graphql',
   cache: new InMemoryCache()
 })
 
