@@ -31,16 +31,7 @@ if(process.env.NODE_ENV === 'production'){
   //app.use(serveStatic(__dirname + './backend/dist'));
   app.use('/', serveStatic(__dirname + '/frontend/dist'))
   app.get(/.*/, (req, res) => res.sendFile(path.join(__dirname + '/frontend/dist/index.html')));
-  //app.use(express.static('public')); 
-  /*app.use(express.static(path.join(__dirname, "./backend/dist")))
-  app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, './backend/dist', 'index.html'))
-})*/
-   /*app.use(express.static(__dirname + '/public/'));
-
-   // Handle SPA
-   app.get('*', (req, res) => res.sendFile(__dirname + '/public/index.html'));*/
-} 
+};
 const PORT = process.env.PORT || 5000;
 
 
