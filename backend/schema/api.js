@@ -1,4 +1,4 @@
-import { ApolloServer, gql } from 'apollo-server'
+import { ApolloServer, gql } from 'apollo-server-express'
 import PassionQueries from '../controllers/passionController.js'
 import TestAnswerQueries from '../controllers/testAnswerController.js'
 import TestAnswerTypes from './TestAnswers/types.js'

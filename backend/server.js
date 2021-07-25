@@ -15,12 +15,13 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+await server.start();
 
-//server.applyMiddleware({ app });
+server.applyMiddleware({ app });
 
-app.use(notFound);
+/*app.use(notFound);
 
-app.use(errorHandler);
+app.use(errorHandler);*/
 
 const __dirname = path.resolve();
 
@@ -28,8 +29,8 @@ const __dirname = path.resolve();
 // HAndle production
 if(process.env.NODE_ENV === 'production'){
   //app.use(serveStatic(__dirname + './backend/dist'));
-  app.use(express.static(__dirname + '/public/'))
-  app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
+  app.use(serveStatic(__dirname + 'public'))
+  app.get('*', (req, res) => res.sendFile(__dirname + '/backend/public/index.html'));
   //app.use(express.static('public')); 
   /*app.use(express.static(path.join(__dirname, "./backend/dist")))
   app.get('/*', (req, res) => {
@@ -43,9 +44,9 @@ if(process.env.NODE_ENV === 'production'){
 const PORT = process.env.PORT || 5000;
 
 
-server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
-
-  console.log(`🚀  Server ready at ${url}`);
+// Kato miten spacex projektissa tehdään gql deployaus
+app.listen({ port: process.env.PORT || 4000 }, () => {
+  console.log(`🚀  Server ready!`);
 });
 
 /*app.listen(
