@@ -34,6 +34,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
+  // Voisko vika olla tässä "BASE_URL"?
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
