@@ -46,7 +46,7 @@ const PORT = process.env.PORT || 5000;
 
 // Kato miten spacex projektissa tehdään gql deployaus
 app.listen({ port: process.env.PORT || 4000 }, () => {
-  console.log(`🚀  Server ready!`);
+  console.log(`🚀  Server ready at ${process.env.PORT}`);
 });
 
 /*app.listen(
