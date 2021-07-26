@@ -24,8 +24,9 @@ const __dirname = path.resolve();
 // HAndle production
 if(process.env.NODE_ENV === 'production'){
   //app.use(serveStatic(__dirname + './backend/dist'));
-  app.use('/', serveStatic(__dirname + '/frontend/dist'))
-  app.get(/.*/, (req, res) => res.sendFile(__dirname + '/frontend/dist/index.html'));
+  //app.use('/', serveStatic(__dirname + '/frontend/dist')) 
+  app.use('/', serveStatic(__dirname + '/backend/public'))
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
 };
 const PORT = process.env.PORT || 5000;
 
