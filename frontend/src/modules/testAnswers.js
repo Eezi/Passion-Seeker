@@ -1,4 +1,4 @@
-const testAnswers = [
+/*const testAnswers = [
     {
      key: "korttipelit",
      label: "Korttipelit",
@@ -16,9 +16,7 @@ const testAnswers = [
          { key: 'ristiseiska', label: 'Ristiseiska' },
      ]
     },
-    /*
         Pallopelit, mailapelit, yksilölait, joukkuelajit
-    */
     {
      key: "lautapelit",
      label: "Lautapelit",
@@ -346,3 +344,4 @@ const testAnswers = [
  
     }
 ]
+*/
