@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.18",
-    "@vue/cli-service": "~4.5.0",
     "@vue/apollo-composable": "^4.0.0-alpha.12",
+    "@vue/cli-service": "~4.5.0",
     "@vue/composition-api": "^1.0.0-rc.8",
     "apollo-client": "^2.6.10",
     "core-js": "^3.6.5",
