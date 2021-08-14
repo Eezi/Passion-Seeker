@@ -11,7 +11,7 @@ const httpLink = new HttpLink({
 })
 
 const defaultClient = new ApolloClient({
-  uri: process.env.NODE_ENV === 'production' ? 'graphql' : 'http://localhost:4000/graphql',
+  uri: process.env.NODE_ENV === 'development' ? 'http://localhost:4000/graphql' : 'graphql',
   //uri: 'http://localhost:4000/graphql',
   cache: new InMemoryCache(),
   connectToDevTools: true,
