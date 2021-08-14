@@ -8,6 +8,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
+    "postinstall": "npm run build",
     "start": "node backend/server.js",
     "dev": "concurrently \"npm run server arg\" \"cd frontend && npm run start\"",
     "server": "node backend/server",
