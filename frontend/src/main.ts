@@ -9,9 +9,9 @@ import router from './router'
 const httpLink = new HttpLink({
   // You should use an absolute URL here
 })
-
+console.log('env', process.env.NODE_ENV)
 const defaultClient = new ApolloClient({
-  uri: process.env.NODE_ENV === 'development' ? 'http://localhost:4000/graphql' : 'graphql',
+  uri: '/graphql',
   //uri: 'http://localhost:4000/graphql',
   cache: new InMemoryCache(),
   connectToDevTools: true,
