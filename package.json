@@ -9,8 +9,8 @@
   "type": "module",
   "scripts": {
     "postinstall": "npm run build",
-    "dev": "node backend/server.js",
-    "start": "concurrently \"npm run server arg\" \"cd client && npm run start arg\"",
+    "start": "node backend/server.js",
+    "dev": "concurrently \"npm run server arg\" \"cd client && npm run start arg\"",
     "server": "node backend/server",
     "build": "npm install --prefix client && npm run build --prefix client",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
