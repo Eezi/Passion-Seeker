@@ -9,8 +9,8 @@
   "type": "module",
   "scripts": {
     "postinstall": "npm run build",
-    "start": "node backend/server.js",
-    "dev": "concurrently \"npm run server arg\" \"cd frontend && npm run start\"",
+    "dev": "node backend/server.js",
+    "start": "concurrently \"npm run server arg\" \"cd client && npm run start arg\"",
     "server": "node backend/server",
     "build": "npm install --prefix frontend && npm run build --prefix frontend ",
     "data:destroy": "node backend/seeder -d",
