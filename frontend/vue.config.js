@@ -1,7 +1,12 @@
 module.exports = {
   assetsDir: 'static',
   devServer: {
-    proxy: 'http://localhost:5000'
+   /*proxy: {
+      "^/graphql": {
+        target: "http://localhost:4000",
+        changeOrigin: true,
+      },
+    },*/
   },
     chainWebpack: config => {
       config.module
