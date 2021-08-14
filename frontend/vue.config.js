@@ -1,7 +1,5 @@
-const path = require('path');
-
 module.exports = {
-  outputDir: path.resolve(__dirname, '../backend/public'),
+ // outputDir: path.resolve(__dirname, '../backend/public'),
   assetsDir: 'static',
   //publicPath: process.env.NODE_ENV === 'production' && '/',
   devServer: {
