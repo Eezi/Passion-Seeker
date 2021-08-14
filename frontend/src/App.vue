@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="font-sans">
   <div id="nav">
     <router-link class="text-lg" to="/">Katergoriat</router-link> |
     <router-link class="text-lg" to="/about">Ammatit</router-link>

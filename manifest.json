@@ -1,0 +1,30 @@
+{
+    "name": "Passion-Seeker - Find your passion with no time",
+    "short_name": "Passion-Seeker",
+    "start_url": "/",
+    "display": "fullscreen",
+    "description": "Find your passion easily",
+    "background_color": "#fff",
+    "theme_color": "#fff",
+    "icons": [
+      {
+        "src": "/public/passion-logo.png",
+        "sizes": "120x120",
+        "type": "image/png",
+        "density": 1
+      },
+      {
+        "src": "/public/passion-logo.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "density": 1
+      },
+      {
+        "src": "/public/passion-logo.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "density": 1,
+        "purpose": "maskable"
+      }   
+    ]
+  }

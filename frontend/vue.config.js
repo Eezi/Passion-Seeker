@@ -1,9 +1,7 @@
 module.exports = {
- // outputDir: path.resolve(__dirname, '../backend/public'),
   assetsDir: 'static',
-  //publicPath: process.env.NODE_ENV === 'production' && '/',
   devServer: {
-    proxy: 'http://localhost:4000'
+    proxy: 'http://localhost:5000'
   },
     chainWebpack: config => {
       config.module

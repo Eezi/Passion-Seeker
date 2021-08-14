@@ -10,7 +10,7 @@
   "scripts": {
     "postinstall": "npm run build",
     "start": "node backend/server.js",
-    "dev": "concurrently \"npm run server arg\" \"cd client && npm run start arg\"",
+    "dev": "concurrently \"npm run server arg\" \"cd frontend && npm run serve\"",
     "server": "node backend/server",
     "build": "npm install --prefix frontend && npm run build --prefix frontend",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
