@@ -14,10 +14,10 @@
     
   <p v-if="!hasNotAnswered" class="mb-2 text-red-600 text-base">Kysymykseen pitää vastata ensin</p> 
     <div class="inline-flex">
-  <button @click="handleNextAndPrev('prev')" class="focus:outline-none bg-yellow-300 hover:bg-yellow-400 text-white-800 font-bold py-2 px-4 rounded-l">
+  <button @click="handleNextAndPrev('prev')" class="focus:outline-none bg-yellow-300 hover:bg-yellow-400 text-white-800 font-bold py-4 px-5 mr-3 rounded-xl">
     Edellinen
   </button>
-  <button @click="handleNextAndPrev('next')" class="focus:outline-none bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-bold py-2 px-4 rounded-r disabled:opacity-50">
+  <button @click="handleNextAndPrev('next')" class="focus:outline-none bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-bold py-4 px-5 rounded-xl disabled:opacity-50">
     Seuraava
   </button>
   </div>
@@ -126,17 +126,10 @@ import { useRoute } from 'vue-router'
     this.stateAnswers = correctQuestions?.answers;
     }
   },
-  computed: {
-    /*disabled: function() {
-      if (this.currentStepAnswered === null) {
-        return true
-      }
-      return false
-    },*/
-  },
 
   created() {
     this.resetTestAnswers();
+    this.$router.push(`/passion-test/question1`);
   },
   updated() {
     this.handleCorrectQuestions();
