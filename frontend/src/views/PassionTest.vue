@@ -1,11 +1,10 @@
 <template>
-    <div class="px-6">
+    <div class="px-6 mt-7">
     <div v-if="url === 'results'">
       <test-results :resetTestAnswers="resetTestAnswers" :testAnswers="answers" />
     </div>
     <div v-else>
       <p class="text-xl mb-2 md:text-2xl font-bold">{{ stateQuestions.label }}</p>
-      <p class="text-md mb-6 md:text-lg font-bold text-yellow-500">Voit valita useita vaihtoehtoja</p>
     <ul>
       <li @click="handleAnswerClick(answer.option)" :class="isSelected(answer.option)" class="answer max-w-lg h-13 mx-auto p-3 bg-blue-500 m-3 text-white rounded font-bold" v-for="(answer, key) in stateAnswers" :key="key">
         <strong> {{ answer.label }} </strong>
@@ -21,8 +20,9 @@
     Seuraava
   </button>
   </div>
-    </div>
-    </div>
+    <p class="text-md mt-5 mb-6 md:text-lg font-bold text-yellow-600">(Voit valita useita vaihtoehtoja)</p>
+  </div>
+ </div>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
