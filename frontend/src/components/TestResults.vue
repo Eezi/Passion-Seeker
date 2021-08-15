@@ -15,7 +15,9 @@
     <h4 class="category text-gray-800	 text-xl">{{ passion.label }}</h4>
     <div class="resultContainer flex justify-center flex-wrap px-5">
     <div v-for="subPassion in passion.subPassions" :key="subPassion.key">
+      <a target="_blank" :href="`http://www.google.com/search?q=${subPassion.label}`">
       <h6 class="subpassion text-lg shadow mx-3 my-3 font-bold" >{{ subPassion.label }}</h6>
+      </a>
     </div>
     </div>
   </div>
