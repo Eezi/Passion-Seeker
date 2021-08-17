@@ -8,6 +8,7 @@
     <p>Haetaan tuloksia...</p>
   </template>
   <template v-else-if="passions.length > 0">
+  <!--<h6 v-if="passions[0].defaultValue" class="text-lg font-bold">Valitettavasti ei löytynyt yhtään sopivaa tulosta, mutta voisit pitää näistä.</h6>-->
   <div 
   class="shadow-md bg-gray-50 mb-8 w-auto md:max-w-xl mx-auto rounded px-6 shadow-md"
   v-for="passion in passions"
@@ -36,7 +37,6 @@
     </div>
   </div>
   </template>
-  <p v-else class="text-lg font-bold">Ei löytynyt yhtään vastauksia lol! Hävisit pelin :(</p>
 </div>
 </template>
 

@@ -17,6 +17,7 @@ export const QUERY_RESULT_PASSIONS = gql`
         category
         label
         key
+        defaultValues
         question1
         question2
         question3

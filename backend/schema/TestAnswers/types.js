@@ -17,6 +17,7 @@ export default `
     type ResultPassion {
         _id: String
         category: String
+        defaultValues: Boolean
         label: String
         key: String
         question1: [String]
