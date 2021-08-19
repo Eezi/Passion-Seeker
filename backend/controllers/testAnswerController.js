@@ -19,6 +19,7 @@ export default {
            delete andFilters.question6;
            results = await TestAnswer.find(andFilters);
          }
+         
          if (results.length <= 0) {
            delete andFilters.question7;
            results = await TestAnswer.find(andFilters);
