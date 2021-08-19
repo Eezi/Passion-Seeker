@@ -23,8 +23,9 @@
     "vue-apollo": "^3.0.7",
     "vue-loader": "^16.2.0",
     "vue-router": "^4.0.0-0",
-    
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
+  },
+  "devDependencies": {
+     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-plugin-eslint": "~4.5.0",
@@ -40,9 +41,6 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2",
     "typescript": "~4.1.5",
     "vue-cli-plugin-apollo": "~0.22.2"
-  },
-  "devDependencies": {
-    
   },
   "eslintConfig": {
     "root": true,
