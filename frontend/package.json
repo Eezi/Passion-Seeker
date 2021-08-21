@@ -38,10 +38,10 @@
     "vue": "^3.0.0",
     "vue-apollo": "^3.0.7",
     "vue-loader": "^16.2.0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "@vue/cli-plugin-pwa": "^4.5.13"
   },
   "devDependencies": {
-    "@vue/cli-plugin-pwa": "^4.5.13"
   },
   "eslintConfig": {
     "root": true,
