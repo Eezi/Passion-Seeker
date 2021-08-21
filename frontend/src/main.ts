@@ -4,6 +4,8 @@ import { DefaultApolloClient } from '@vue/apollo-composable'
 import App from './App.vue'
 import '../src/index.css'
 import router from './router'
+import './registerServiceWorker'
+
 
 const defaultClient = new ApolloClient({
   // KOITA DEPLOYAA TÄÄ TÄLLEEN, VOIS SALEE TOIMII
