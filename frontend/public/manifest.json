@@ -1,7 +1,7 @@
 {
     "name": "Passion-Seeker - Find your passion with no time",
     "short_name": "Passion-Seeker",
-    "start_url": "/",
+    "start_url": "./index.html",
     "display": "fullscreen",
     "description": "Find your passion easily",
     "background_color": "#fff",
