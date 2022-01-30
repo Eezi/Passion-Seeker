@@ -1,8 +1,7 @@
 <template>
   <div class="font-sans">
   <div id="nav">
-    <router-link class="text-lg" to="/">Kategoriat</router-link> |
-    <router-link class="text-lg" to="/about">Ammatit</router-link>
+    <router-link class="text-lg" to="/">Kategoriat</router-link>
   </div>
   <router-view v-slot="{ Component }">
     <transition name="route" mode="out-in">

@@ -66,6 +66,15 @@ export const questions: { key: string, label: string, answers: Array<object> } [
            { label: 'Useita kertoja viikossa', option: 'd' }
         ]
     },
+    /*{
+        label: 'Tykkäätkö korkeista paikoista?',
+        key: 'question8',
+        answers: [
+           { label: 'Kyllä', option: 'a' },
+           { label: 'En', option: 'b' },
+           { label: 'Ei ole väliä', option: 'c' }
+        ]
+    }*/
 ];
 
  // Esimerkkiharrastus 

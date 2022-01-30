@@ -159,7 +159,6 @@ export const testAnswers = [
          { key: 'kiipeily ', label: 'Kiipeily' },
          { key: 'ratsastus', label: 'Ratsastus' },
          { key: 'laskettelu', label: 'Laskettelu' },
-         { key: 'jalkapallo', label: 'Jalkapallo' },
          { key: 'skeittaus', label: 'Skeittaus' },
          { key: 'skuuttaus', label: 'Skuuttaus' },
          { key: 'rullaluistelu', label: 'Rullaluistelu' },
@@ -381,6 +380,29 @@ export const newAnswers = [
          { key: 'arcadepelit ', label: 'Arcadepelit' },
      ]
   },
+]
+
+export const pallopelit = [
+    {
+        key: "pallopelit",
+        label: "Pallopelit",
+        category: "sports-and-outdoor",
+        question1: ['a'],
+        question2: ['a'],
+        question3: ['b'],
+        question4: ['c'],
+        question5: ['a'],
+        question6: ['a'],
+        question7: ['b', 'd'],
+        subPassions: [
+            { key: 'koripallo', label: 'Koripallo' },
+            { key: 'jalkapallo', label: 'Jalkapallo' },
+            { key: 'pesäpallo', label: 'Pesäpallo' },
+            { key: 'lentopallo', label: 'Lentopallo' },
+            { key: 'kasipallo', label: 'Käsipallo' },
+            { key: 'vesipallo', label: 'Vesipallo' },
+        ]
+    }
 ]
 
 
