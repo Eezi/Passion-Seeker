@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/passion-logo.png"
   },
   {
-    "revision": "329359d8c56c1556ee837e06f22c0e28",
+    "revision": "2e03dfeecabf3148475fb2592bd98ac4",
     "url": "/index.html"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/robots.txt"
   },
   {
-    "revision": "28d276d69f38f80fc167",
+    "revision": "3292075b5402fa096c8f",
     "url": "/static/css/app.532c207c.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/about.c8d7578d.js"
   },
   {
-    "revision": "28d276d69f38f80fc167",
-    "url": "/static/js/app.701e0f16.js"
+    "revision": "3292075b5402fa096c8f",
+    "url": "/static/js/app.b2bda90c.js"
   },
   {
     "revision": "c8d5ded79c2e0be3fca9",
