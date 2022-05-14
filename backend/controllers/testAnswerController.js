@@ -38,8 +38,6 @@ const intializeFilter = (answers) => {
   return filter;
 };
 
-const addPetHobbies = async (results) => {};
-
 export default {
   getTestResults: async (parent, args, context) => {
     const { answers } = args;
@@ -55,7 +53,7 @@ export default {
 
     if (likePets) {
       // Include pet passions includes answer c in question 6
-      const animalPassionsi = await TestAnswer.find({
+      const animalPassions = await TestAnswer.find({
         key: "elainten-kanssa-toimiminen",
       });
       results.push(animalPassions[0]);
